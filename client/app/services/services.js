@@ -3,7 +3,7 @@ angular.module('shortly.services', [])
 .factory('Links', function ($http) {
   // Your code here
   var addLink = function(url){
-    console.log('factory method addLink running');
+    // console.log('factory method addLink running');
     return $http({
       method: 'POST',
       url: '/api/links',
@@ -13,8 +13,19 @@ angular.module('shortly.services', [])
       return resp;
     });
   };
+  var getLinks = function(){
+    return $http({
+      method: 'GET',
+      url: '/api/links'
+    })
+    .then(function(resp){
+      console.log(resp.data);
+      return resp.data;
+    })
+  }
   return {
-    addLink: addLink
+    addLink: addLink,
+    getLinks: getLinks
   };
 })
 .factory('Auth', function ($http, $location, $window) {
