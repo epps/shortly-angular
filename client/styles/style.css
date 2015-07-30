@@ -146,3 +146,14 @@ input[type=url]:focus {
   clear: both;
 }
 
+input.ng-invalid-url {
+  background-color: pink;
+}
+
+input.ng-valid-url {
+  background-color: lightgreen;
+}
+
+input.ng-pristine {
+  background-color: white;
+}
